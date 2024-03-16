@@ -74,13 +74,13 @@ async def home_page(page:ft.Page):
                         label="Min",
                         on_change=change_all_data_value
                     ),
-                    ft.Dropdown(
-                        ref=tempo_seg_ref,
-                        options=generate_options(59),
-                        width=100,
-                        label="Sec",
-                        on_change=change_all_data_value
-                    )
+                    # ft.Dropdown(
+                    #     ref=tempo_seg_ref,
+                    #     options=generate_options(59),
+                    #     width=100,
+                    #     label="Sec",
+                    #     on_change=change_all_data_value
+                    # )
                 ])
             ],alignment=ft.MainAxisAlignment.CENTER
             ,horizontal_alignment=ft.CrossAxisAlignment.CENTER),
@@ -144,7 +144,7 @@ async def home_page(page:ft.Page):
     await page.add_async(container)
     tempo_hrs_ref.current.value=1
     tempo_min_ref.current.value=30
-    tempo_seg_ref.current.value=0
+    # tempo_seg_ref.current.value=0
 
     foco_min_ref.current.value=20
 
@@ -215,7 +215,7 @@ async def action_page(page: ft.Page):
 def change_all_data_value(e):
     all_data["tempo_hrs"]=tempo_hrs_ref.current.value
     all_data["tempo_min"]=tempo_min_ref.current.value
-    all_data["tempo_seg"]=tempo_seg_ref.current.value
+    # all_data["tempo_seg"]=tempo_seg_ref.current.value
 
     all_data["foco_min"]=foco_min_ref.current.value
 
@@ -374,7 +374,7 @@ class ButtonStartHomePage(ft.UserControl):
         
         all_data["tempo_hrs"]=int(tempo_hrs_ref.current.value)
         all_data["tempo_min"]=int(tempo_min_ref.current.value)
-        all_data["tempo_seg"]=int(tempo_seg_ref.current.value)
+        # all_data["tempo_seg"]=int(tempo_seg_ref.current.value)
         
         all_data["foco_min"]=int(foco_min_ref.current.value)
 
